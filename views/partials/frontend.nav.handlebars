@@ -1,0 +1,53 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-black fixed-top ">
+  <div class="container">
+    <a class="navbar-brand" href="/">N.E.Gym</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown"
+      aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavDropdown">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="/">Home <span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/about">About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/amenities">Amenities</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/classes">Classes</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/instructors">Instructors</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/calendar">Calendar</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/memberships">Memberships</a>
+        </li>
+        <li class="nav-item">
+          <a class="btn btn-outline-orange hvr-shutter-out-horizontal" href="/trial">Trial</a>
+        </li>
+      </ul>
+
+      {{#if user}}
+      <span class="navbar-text">
+        <a href="/account">Account</a> / <a href="/logout">Log Out</a>
+      </span>
+      {{/if}}
+      {{#unless user}}
+      <span class="navbar-text">
+        <a href="/login">Login</a> / <a href="/signup">Sign Up</a>
+      </span>
+      {{/unless}}
+      {{#ifMore user.memberLvl 4}}
+      <span class="navbar-text">
+        / <a href="/admin">Admin panel</a>
+      </span>
+      {{/ifMore}}
+    </div>
+  </div>
+</nav>

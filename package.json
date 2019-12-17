@@ -1,21 +1,31 @@
 {
-  "name": "node-handlebars-boilerplate",
+  "name": "n.e. gym",
   "version": "1.0.0",
   "description": "Project 2 Starter",
   "main": "server.js",
   "scripts": {
     "start": "node server.js",
-    "lint": "eslint --quiet .",
-    "fix": "eslint --fix .",
-    "test": "npm run lint && cross-env NODE_ENV=test mocha -u tdd --reporter spec --exit"
+    "lint": "eslint --quiet .; exit 0",
+    "fix": "eslint --fix .; exit 0",
+    "test": "npm run lint && cross-env NODE_ENV=test mocha --reporter spec --exit"
   },
   "license": "ISC",
   "dependencies": {
-    "dotenv": "^8.0.0",
+    "bcrypt": "^3.0.7",
+    "connect-flash": "^0.1.1",
+    "dotenv": "^8.2.0",
     "express": "^4.17.0",
     "express-handlebars": "^3.1.0",
+    "express-session": "^1.17.0",
+    "googleapis": "^39.2.0",
+    "moment": "^2.24.0",
     "mysql2": "^1.6.5",
-    "sequelize": "^5.8.6"
+    "nodemailer": "^6.4.1",
+    "nodemon": "^2.0.1",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "sequelize": "^5.8.6",
+    "tail.datetime": "^0.4.13"
   },
   "devDependencies": {
     "chai": "^4.2.0",

@@ -1,3 +1,414 @@
-.list-group-item {
-  line-height: 2.5;
+@import "./animate.css";
+@import "./hover.css";
+@import "./calendar.css";
+@font-face {
+
+  font-family: "RavensClaws";
+  src: url("/fonts/RavensClaws.woff2") format("woff2"),
+      url("/fonts/RavensClaws.woff") format("woff");
+  font-weight: "normal";
+  font-style: "normal";
+
 }
+
+.raven {
+  font-family: "RavensClaws";
+}
+
+body {
+  margin: 0;
+  background: #212121; 
+  font-family: 'Montserrat', sans-serif;
+  color: #ffffff;
+  overflow-x: hidden;
+}
+.window-black {
+  background: #121212;
+  border: solid 2px #484848;
+  box-shadow: 0 8px 10px 1px rgba(0, 0, 0, 0.14), 
+              0 3px 14px 2px rgba(0, 0, 0, 0.12), 
+              0 5px 5px -3px rgba(0, 0, 0, 0.2);
+  color: #ffffff80;
+}
+.window-black a, .window-black p {
+  color: #ffffff90;
+}
+.btn-orange {
+  background: #ff6d00!important;
+  color: #ffffff!important;
+  border: #ff6d00!important;
+  
+}
+.btn-orange:hover {
+  background: #ff9e40!important;
+  color: #121212!important;
+  border: #ff6d00!important;
+}
+.text-orange {
+  color: #ff6d00!important;
+}
+.bg-orange {
+  background: #ff6d00!important;
+}
+.bg-orange-80 {
+  background: #ff6d0080!important;
+}
+
+.btn-orange-dark {
+  background: #c43c00!important;
+  color: #ffffff!important;
+  border: #c43c00!important;
+}
+.btn-orange-dark:hover {
+  background: #ff9e40!important;
+  color: #121212!important;
+  border: #ff6d00!important;
+}
+.text-orange-dark {
+  color: #c43c00!important;
+}
+.bg-orange-dark {
+  background: #c43c00!important;
+}
+.bg-orange-dark-80 {
+  background: #c43c0080!important;
+}
+
+.btn-orange-light {
+  background: #ff9e40!important;
+  color: #ffffff!important;
+  border: #ff9e40!important;
+}
+.btn-orange-light:hover {
+  background: #ff6d00!important;
+  color: #121212!important;
+  border: #ff6d00!important;
+}
+.text-orange-light {
+  color: #ff9e40!important;
+}
+.bg-orange-light {
+  background: #ff9e40!important;
+}
+.bg-orange-light-80 {
+  background: #ff9e4080!important;
+}
+.bg-dark-80 {
+  background: #12121280!important;
+}
+.btn-dark {
+  background: #212121!important;
+  color: #ffffff90!important;
+  border: 1px solid #000!important;
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+.btn-dark:hover {
+  background: #000000!important;
+  color: #ffffff!important;
+  border: 1px solid #000!important;
+  box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
+}
+
+.btn-outline-orange {
+  color: #ff6d00;
+  border-color: #ff6d00;
+}
+
+.list-group-item { 
+  line-height: 2.5;
+ }
+video { 
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -100;
+  transform: translateX(-50%) translateY(-50%);
+  background: url(https://static.videezy.com/system/resources/previews/000/007/006/original/MR8_8170.mp4) no-repeat;
+  background-size: cover;
+  transition: 1s opacity;
+}
+.stopfade { 
+  opacity: .5;
+}
+#polina { 
+  font-family: Agenda-Light, Agenda Light, Agenda, Arial Narrow, sans-serif;
+  font-weight:100; 
+  background: rgba(0,0,0,0.3);
+  color: white;
+  padding: 2rem;
+  width: 33%;
+  margin:2rem;
+  float: right;
+  font-size: 1.2rem;
+}
+  h1 {
+    font-size: 3rem;
+    margin-top: 0;
+    letter-spacing: .3rem;
+  }
+  #polina button { 
+    display: block;
+    width: 80%;
+    padding: .4rem;
+    border: none; 
+    margin: 1rem auto; 
+    font-size: 1.3rem;
+    background: rgba(255,255,255,0.23);
+    color: #fff;
+    border-radius: 3px; 
+    cursor: pointer;
+    transition: .3s background;
+  }
+  #polina button:hover { 
+     background: rgba(0,0,0,0.5);
+  }
+  a {
+    display: inline-block;
+    color: #fff;
+  }
+  a:hover{
+    background: white(0,0,0,0.9);
+  }
+  @media screen and (max-width: 500px) { 
+    div{width:70%;} 
+  }
+  @media screen and (max-device-width: 800px) {
+    html { background: url(https://static.videezy.com/system/resources/previews/000/007/006/original/MR8_8170.mp4 ) #000 no-repeat center center fixed; }
+    #bgvid { display: none; }
+}
+
+/* body 1st html */
+
+ body{padding:0px;
+    margin:0px;
+}
+.section{
+  height:500px;
+  margin-top:-25px;
+  background-size:cover;
+  background-position:center center;
+  background-attachment:fixed;
+}
+
+#About{
+  background:url(https://www.mensjournal.com/wp-content/uploads/mf/dumbbellrack_rotator.gif);
+  height:500px;
+  background-size:cover;
+  background-position:center center;
+  background-attachment:fixed;
+}
+
+h2{color: white;
+  text-align:center;
+}
+
+.set{color:#ffffff;
+    font-size:16px;
+}
+
+#contact{
+  background:url(http://blackirongymnv.com/wp-content/uploads/2015/07/black-iron-gym-contact.jpg);
+  height:400px;
+  background-size:cover;
+  background-position:center center;
+  background-attachment:fixed;
+}
+
+#nextBox{
+ background-color: transparent;
+}
+
+p{
+  color:#ffffff;
+}
+
+.lee{
+  color:#ffffff;
+}
+
+.jest{list-style:none;
+  text-decoration:none;
+}
+.second{
+  color:#ffffff;
+}
+
+#contact {
+  color: white;
+} 
+.kalam {
+  font-family: 'Kalam', cursive;
+}
+.expletus {
+  font-family: 'Expletus Sans', cursive;
+}
+.bad-script {
+  font-family: 'Bad Script', cursive;
+}
+.title {
+  color: white;
+  font-size:60px;
+  margin-top:100px;
+  text-align:center;
+}
+ 
+#amenities {
+  background: url("https://content.active.com/Assets/Active.com+Content+Site+Digital+Assets/Fitness/Articles/Twice+a+Day/man+working+out-carousel.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#about {
+  background: url("/images/bg-2.jpg") top right;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#slogan {
+  background: url("/images/bg-1.jpg") top right;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#call-for-action {
+  background: url("/images/bg-4.jpg") top right;
+  background-repeat: no-repeat;
+  background-size: cover;
+  text-shadow: 3px 3px 3px #12121270;
+}
+
+.navbar a {
+  background: transparent!important;
+}
+
+.bg-black {
+  background: #121212;
+}
+
+.card-header, .card-footer {
+  background: #212121;
+}
+
+.social {
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.fb {
+  background: #3b5998;
+}
+.fb a:hover {
+  color: #3b5998;  
+  background: white;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.twitter {
+  background: #55acee;
+}
+.twitter a:hover {
+  color: #55acee;  
+  background: white;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.google {
+  background: #dc4e41;
+}
+.google a:hover {
+  color: #dc4e41;  
+  background: white;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.pinterest {
+  background: #bd081c;
+}
+.pinterest a:hover {
+  color: #bd081c;  
+  background: white;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.github {
+  background: #00405d;
+}
+.github a:hover {
+  color: #00405d;  
+  background: white;
+  width: 32px;
+  height: 32px;
+  line-height: 32px;
+  border-radius: 50%;
+  text-align: center;
+}
+
+.img-thumbnail {
+  padding: .1rem;
+  background-color: #ff6d00;
+  border: 1px solid #ff6d00;
+  border-radius: .25rem;
+  max-width: 100%;
+  height: auto;
+}
+
+.badge {
+  float: right;
+  background: #ff9e40!important;
+}
+
+.display-1 small {
+  font-size: 40%!important;
+}
+
+.form-control {
+  background-color: #121212;
+  color: #ffffff!important;
+  border: 1px solid #ff6d00;
+}
+.form-control:focus {
+  color: #ff6d00;
+  background-color: #12121250;
+  border-color: #ff6d0050;
+  outline: 0;
+  box-shadow: 0 0 0 0.2rem #ff6d0050;
+}
+
+.form-control:disabled, .form-control[readonly] {
+  background-color: #212121;
+  opacity: 1;
+}
+
+
+
+
+
+
+
+
+
+
+

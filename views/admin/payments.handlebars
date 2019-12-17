@@ -1,0 +1,51 @@
+<div class="card mb-3">
+  <div class="card-header">
+    <i class="fas fa-table"></i>
+    {{ title }}
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Reference Id</th>
+            <th>Payment Id</th>
+            <th>Payer email</th>
+            <th>Amount</th>
+            <th>Status</th>
+            <th>User Id</th>
+            <th>View</th>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+            <th>Id</th>
+            <th>Reference Id</th>
+            <th>Payment Id</th>
+            <th>Payer email</th>
+            <th>Amount</th>
+            <th>Status</th>
+            <th>User Id</th>
+            <th>View</th>
+          </tr>
+        </tfoot>
+        <tbody>
+          {{#each results}}
+          <tr>
+            <td>{{ id }}</td>
+            <td>{{ referenceId }}</td>
+            <td><a class="link" href="/admin/payments/{{ id }}">{{ paymentId }}</a></td>
+            <td><a href="Mailto:{{ payerEmail }}">{{ payerEmail }}</a></td>
+            <td>${{ amount }}</td>
+            <td>{{ status }}</td>
+            <td><a href="/admin/users/{{ userId }}">{{ userId }}</a></td>
+            <td><a class="btn btn-dark btn-block" href="/admin/payments/{{ id }}">View</a></td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card-footer small text-muted">Last updated <span id="date"></span></div>
+</div>

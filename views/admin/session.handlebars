@@ -1,0 +1,53 @@
+<!-- Class -->
+<div class="card mb-3">
+  <div class="card-header d-flex justify-content-between align-items-center">
+    <div>
+      <i class="fas fa-table"></i>
+      {{ title }}
+    </div>
+    <div id="save_btn_placeholder">
+      {{#ifMore user.memberLvl 5}}<button class="btn btn-dark" id="edit_session">Edit</button>{{/ifMore}}
+      {{#ifMore user.memberLvl 6}}<button class="btn btn-danger" id="delete_session">Delete</button>{{/ifMore}}
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered" width="100%" cellspacing="0">
+        <tr>
+          <td>ID:</td>
+          <td id="session_id">{{ results.id }}</td>
+        </tr>
+        <tr>
+          <td>Name</td>
+          <td>
+            <select name="session_class" id="session_class" class="form-control" disabled>
+              <option value="{{ results.ClassId }}">{{ results.Class.name }}</option>
+              {{#each classes}}
+              <option value="{{ id }}">{{ name }}</option>
+              {{/each}}
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Instructor</td>
+          <td>
+            <select name="session_inst" id="session_inst" class="form-control" disabled>
+              <option value="{{ results.InstructorId }}">{{ results.Instructor.firstName }}
+                {{ results.Instructor.lastName }}</option>
+              {{#each instructor}}
+              <option value="{{ id }}">{{ firstName }} {{ lastName }}</option>
+              {{/each}}
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Date/Time</td>
+          <td>
+            <input type="text" class="tail-datetime-field form-control" id="session_date" value="{{ results.date }}" disabled>
+          </td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="card-footer small text-muted">Last updated <span id="date"></span></div>
+</div>

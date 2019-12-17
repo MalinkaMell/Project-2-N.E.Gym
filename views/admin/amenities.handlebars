@@ -1,0 +1,86 @@
+<div class="card mb-3">
+  <div class="card-header">
+    <i class="fas fa-table"></i>
+    {{ title }}
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Photo</th>
+            <th>Premium</th>
+            <th>View</th>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Photo</th>
+            <th>Premium</th>
+            <th>View</th>
+          </tr>
+        </tfoot>
+        <tbody>
+          {{#each results}}
+          <tr>
+            <td>{{ id }}</td>
+            <td><a class="link" href="/admin/amenities/{{ id }}">{{ name }}</a></td>
+            <td>{{ description }}</td>
+            <td><img src="{{ photo }}" class="img-fluid img-thumbnail"></td>
+            <td class="{{ premium }} text-center"></td>
+            <td>
+              <a class="btn btn-dark btn-block" href="/admin/amenities/{{ id }}">View</a>
+            </td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card-footer small text-muted">Last updated <span id="date"></span></div>
+</div>
+{{#ifMore user.memberLvl 4}}
+<!-- Add new  -->
+<div class="card mb-3">
+  <div class="card-header">
+    <i class="fas fa-table"></i>
+    Add New Amenity
+  </div>
+  <div class="card-body">
+    <form name="amenities_form" action="/admin/amenities" method="POST">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="amenity_name" aria-describedby="nameHelp" required>
+        <small id="nameHelp" class="form-text text-muted"></small>
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea name="description" class="form-control" id="amenity_description" aria-describedby="descriptionHelp"
+          required></textarea>
+        <small id="descriptionHelp" class="form-text text-muted"></small>
+      </div>
+      <div class="form-group">
+        <label for="name">Photo</label>
+        <input type="text" name="amenity_photo" class="form-control" id="amenity_photo" aria-describedby="photoHelp"
+          required>
+        <small id="photoHelp" class="form-text text-muted"></small>
+      </div>
+      <div class="form-group">
+        <label for="premium">Premium?</label>
+        <select name="premium" id="premium" class="form-control" aria-describedby="premiumHelp">
+          <option value="0" selected>No</option>
+          <option value="1">Yes</option>
+        </select>
+        <small id="premiumHelp" class="form-text text-muted"></small>
+      </div>
+      <button type="submit" id="create_amenity" class="btn btn-dark">Submit</button>
+    </form>
+  </div>
+</div>
+{{/ifMore}}

@@ -1,0 +1,105 @@
+<div class="card mb-3">
+  <div class="card-header">
+    <i class="fas fa-table"></i>
+    {{ title }}
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Description</th>
+            <th>Duration</th>
+            <th>Intensity</th>
+            <th>Price</th>
+            <th>Manage</th>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Description</th>
+            <th>Duration</th>
+            <th>Intensity</th>
+            <th>Price</th>
+            <th>Manage</th>
+          </tr>
+        </tfoot>
+        <tbody>
+          {{#each results}}
+          <tr>
+            <td>{{ id }}</td>
+            <td><a class="link" href="/admin/classes/{{ id }}">{{ name }}</a></td>
+            <td>{{ Category.name }}</td>
+            <td>{{ description }}</td>
+            <td>{{ duration }} min</td>
+            <td>{{ intensity }}</td>
+            <td>${{ price }}</td>
+            <td><a class="btn btn-dark btn-block" href="/admin/classes/{{ id }}">View</a></td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card-footer small text-muted">Last updated <span id="date"></span></div>
+</div>
+{{#ifMore user.memberLvl 4}}
+<!-- Add new  -->
+<div class="card mb-3">
+  <div class="card-header">
+    <i class="fas fa-table"></i>
+    Add New Class
+  </div>
+  <div class="card-body">
+    <form name="classes_form" action="/admin/classes" method="POST">
+      <div class="form-group">
+        <label for="name">Name</label>
+        <input type="text" class="form-control" id="class_name" aria-describedby="nameHelp">
+        <small id="nameHelp" class="form-text text-muted"></small>
+      </div>
+      <div class="form-group">
+        <label for="category">Category</label>
+        <select name="class_category" id="class_category" class="form-control" aria-describedby="categoryHelp">
+          <option value="0">No category</option>
+           {{#each categories}}
+            <option value="{{ id }}">{{ name }}</option>
+           {{/each}}
+        </select>
+        <small id="categoryHelp" class="form-text text-muted"></small>
+      </div>
+      <div class="form-group">
+        <label for="description">Description</label>
+        <textarea name="class_description" class="form-control"  id="class_description" aria-describedby="descriptionHelp"></textarea>
+        <small id="descriptionHelp" class="form-text text-muted"></small>
+      </div>
+      <div class="form-group">
+        <label for="duration">Duration (if omited - 60 min)</label>
+        <input type="number" class="form-control" id="class_duration" aria-describedby="durationHelp" value="60">
+        <small id="durationHelp" class="form-text text-muted"></small>
+      </div>
+      <div class="form-group">
+        <label for="intensity">Intensity</label>
+        <select name="class_intensity" class="form-control" id="class_intensity" aria-describedby="intensityHelp">
+          <option value="All levels" selected>All levels</option>
+          <option value="Beginner">Beginner</option>
+          <option value="Intermediate">Intermediate</option>
+          <option value="Advanced">Advanced</option>
+        </select>
+        <small id="intensityHelp" class="form-text text-muted"></small>
+      </div>
+       <div class="form-group">
+        <label for="price">Price</label>
+        <input type="number" min="0.00" max="10000.00" step="0.01" class="form-control" id="class_price" aria-describedby="priceHelp">
+        <small id="priceHelp" class="form-text text-muted"></small>
+      </div>
+      <button type="submit" id="create_class" class="btn btn-dark">Submit</button>
+    </form>
+  </div>
+</div>
+{{/ifMore}}

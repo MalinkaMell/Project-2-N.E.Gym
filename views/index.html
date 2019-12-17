@@ -1,12 +1,20 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
-</head>
-<body>
-    
-</body>
-</html>
+
+
+
+
+
+<div id="home">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <h1>Welcome!</h1>
+              {{#if user}}
+              <h2>This is our Home Page!</h2>
+              <a href="/logout">log out</a> | <a href="/admin">Go to admin</a>
+              {{else}}
+              <p>Please <a href="/login">log in</a>.</p>
+              {{/if}}
+            </div>
+          </div>
+        </div>
+      </div>

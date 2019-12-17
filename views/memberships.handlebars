@@ -1,0 +1,76 @@
+<video id="bgvid" playsinline autoplay muted loop>
+  <source src="https://static.videezy.com/system/resources/previews/000/007/006/original/MR8_8170.mp4"
+    type="video/webm">
+</video>
+
+{{> frontend.nav}}
+
+{{!-- about us --}}
+<section class="container-fluid d-flex py-5 justify-content-center align-items-center my-5">
+  <div class="container">
+    <div class="col-md-12">
+      <h1 class="text-center raven animated fadeIn slow delay-1s">{{ title }}</h1>
+      <div class="card-deck my-5">
+        <div class="card text-white window-black mb-3 animated bounceInLeft slow text-center" data-aos="fade-right">
+          <div class="card-header h3 text-orange text-center">Basic</div>
+          <div class="card-body">
+            <h3 class="pt-2 pb-4 text-orange">
+              $9.99 <small>/month</small>
+            </h3>
+            <ul class="list-unstyled">
+              <li>Free Weight Area</li>
+              <li>Cross Functional Training Area</li>
+              <li>Cardio Deck</li>
+              <li>Fitness Cinema</li>
+              <li>Basketball Court</li>
+            </ul>
+          </div>
+          <div class="card-footer bg-orange"><a class="btn hvr-rectangle-out btn-block" href="/subscribe">Become a
+              Member!</a>
+          </div>
+        </div>
+        <div class="card text-white  window-black mb-3 animated bounceInDown slow text-center">
+          <div class="card-header h3 text-orange text-center">Gold</div>
+          <div class="card-body">
+            <h3 class="pt-2 pb-4 text-orange">
+              $19.99 <small>/month</small>
+            </h3>
+            <ul class="list-unstyled">
+              <li>Free Weight Area</li>
+              <li>Cross Functional Training Area</li>
+              <li>Cardio Deck</li>
+              <li>Fitness Cinema</li>
+              <li>Basketball Court</li>
+              <li>Pool / Sauna</li>
+              <li>Hydro-massage / Tanning</li>
+              <li>Classes</li>
+            </ul>
+          </div>
+          <div class="card-footer bg-orange"><a class="btn hvr-rectangle-out btn-block" href="/subscribe">Become a Gold
+              Member</a></div>
+        </div>
+        <div class="card text-white  window-black mb-3 animated bounceInRight slow text-center">
+          <div class="card-header h3 text-orange text-center">One Day Pass</div>
+          <div class="card-body">
+            <h3 class="pt-2 pb-4 text-orange">
+              $1.99
+            </h3>
+            <h4>All inclusive one day at N.E. Gym</h4>
+          </div>
+          <div class="card-footer bg-orange">
+            <form action="/prepayment" method="POST">
+              <input type="hidden" name="type" value="One Day Pass">
+              <input type="hidden" name="amount" value="1.99">
+              <button class="btn hvr-rectangle-out btn-block" type="submit">Get One Day Pass!</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+  </div>
+
+</section>
+
+{{> frontend.footer}}

@@ -1,0 +1,47 @@
+<!-- Instructor -->
+<div class="card mb-3">
+  <div class="card-header d-flex justify-content-between align-items-center">
+    <div>
+      <i class="fas fa-table"></i>
+      {{ title }}
+    </div>
+    <div id="save_btn_placeholder">
+      {{#ifMore user.memberLvl 5}}<button class="btn btn-dark" id="refund">Refund</button>{{/ifMore}}
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered" width="100%" cellspacing="0">
+        <tr>
+          <td>Id:</td>
+          <td>{{ results.id }}</td>
+        </tr>
+        <tr>
+          <td>Payment Id</td>
+          <td>{{ results.paymentId }}</td>
+        </tr>
+        <tr>
+          <td>Reference Id</td>
+          <td>{{ results.referenceId }}</td>
+        </tr>
+        <tr>
+          <td>Payer email</td>
+          <td><a href="Mailto:{{ results.payerEmail }}">{{ results.payerEmail }}</a></td>
+        </tr>
+        <tr>
+          <td>Amount</td>
+          <td>${{ results.amount }}</td>
+        </tr>
+        <tr>
+          <td>Email</td>
+          <td>{{ results.status }}</td>
+        </tr>
+         <tr>
+          <td>User id</td>
+          <td>{{ results.userId }}</td>
+        </tr>
+      </table>
+    </div>
+  </div>
+  <div class="card-footer small text-muted">Last updated <span id="date"></span></div>
+</div>

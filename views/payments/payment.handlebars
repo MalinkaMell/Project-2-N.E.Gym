@@ -1,0 +1,51 @@
+<script
+  src="https://www.paypal.com/sdk/js?client-id=AeKbPtgoqX8lDTWbDhfwep5c2-5TTjVHhVsPFjVJms_mHUyGHFCbqGmkhesnGCwG6wjneDOnOI8YISGn" async></script>
+
+
+{{> frontend.nav}}
+
+{{!-- pay --}}
+<section class="container-fluid d-flex p-2 justify-content-center align-items-center vh-100" id="about">
+  <div class="container">
+    <div class="row ">
+      <div class="col-md-4 ">
+        <div class="card text-white bg-orange-80 mb-3 animated bounceInDown slow  text-center">
+          <div class="card-header h3">{{type}}</div>
+          <div class="card-body" id="payment-body">
+            <h4 class="text-left">
+              Item: <span class="type">{{type}}</span>
+            </h4>
+            <h4 class="text-left">
+              Price: <span class="amount">{{amount}}</span>
+            </h4>
+            <div id="paypal-button-container"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{{> frontend.footer}}
+
+<script src="/admin/js/paypal.js"></script>
+
+{{!-- 
+{orderID: "2HH674165M448725N", payerID: "G5H6TDQAAH4E4"}
+orderID: "2HH674165M448725N"
+payerID: "G5H6TDQAAH4E4"
+__proto__: Object
+
+
+(index):43 
+{create_time: "2019-12-05T07:13:32Z", update_time: "2019-12-05T07:13:45Z", id: "2HH674165M448725N", intent: "CAPTURE", status: "COMPLETED", …}
+create_time: "2019-12-05T07:13:32Z"
+id: "2HH674165M448725N"
+intent: "CAPTURE"
+links: [{…}]
+payer: {email_address: "personal@project2.com", payer_id: "G5H6TDQAAH4E4", address: {…}, name: {…}}
+purchase_units: [{…}]
+status: "COMPLETED"
+update_time: "2019-12-05T07:13:45Z"
+__proto__: Object
+ --}}

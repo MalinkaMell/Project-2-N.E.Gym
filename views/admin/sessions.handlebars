@@ -1,0 +1,81 @@
+<div class="card mb-3">
+  <div class="card-header">
+    <i class="fas fa-table"></i>
+    {{ title }}
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Instructor</th>
+            <th>Date</th>
+            <th>View</th>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Instructor</th>
+            <th>Date</th>
+            <th>View</th>
+          </tr>
+        </tfoot>
+        <tbody>
+          {{#each results}}
+          <tr>
+            <td>{{ id }}</td>
+            <td><a class="link" href="/admin/sessions/{{ id }}">{{ Class.name }}</a></td>
+            <td>{{ Instructor.firstName }} {{ Instructor.lastName }}</td>
+            <td>{{ date }}</td>
+            <td>
+              <a class="btn btn-dark btn-block" href="/admin/sessions/{{ id }}">View</a>
+            </td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card-footer small text-muted">Last updated <span id="date"></span></div>
+</div>
+{{#ifMore user.memberLvl 4}}
+<!-- Add new  -->
+<div class="card mb-3">
+  <div class="card-header">
+    <i class="fas fa-table"></i>
+    Create New Session
+  </div>
+  <div class="card-body">
+    <form name="classes_form" action="/admin/sessions" method="POST">
+  
+      <div class="form-group">
+        <label for="class">Class</label>
+        <select id="session_class" class="form-control">
+          <option value="0">Select an option</option>
+           {{#each classes}}
+            <option value="{{ id }}">{{ name }}</option>
+           {{/each}}
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="instructor">Instructor</label>
+        <select id="session_inst" class="form-control">
+          <option value="0">Select an option</option>
+           {{#each instructor}}
+            <option value="{{ id }}">{{ firstName }} {{ lastName }}</option>
+           {{/each}}
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="session_date">Date</label>
+        <input type="text" class="tail-datetime-field form-control" id="session_date">
+      </div>
+      <button type="submit" id="create_session" class="btn btn-dark">Submit</button>
+    </form>
+  </div>
+</div>
+{{/ifMore}}

@@ -1,0 +1,92 @@
+<div class="card mb-3">
+  <div class="card-header">
+    <i class="fas fa-table"></i>
+    {{ title }}
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Bio</th>
+            <th>Photo</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>View</th>
+          </tr>
+        </thead>
+        <tfoot>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Bio</th>
+            <th>Photo</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>View</th>
+          </tr>
+        </tfoot>
+        <tbody>
+          {{#each results}}
+          <tr>
+            <td>{{ id }}</td>
+            <td><a class="link" href="/admin/instructors/{{ id }}">{{ firstName }} {{ lastName }}</a></td>
+            <td>{{ bio }}</td>
+            <td><img src="{{ photo }}" class="img-fluid img-thumbnail"></td>
+            <td><a href="Mailto:{{ email }}">{{ email }}</a></td>
+            <td>{{ phone }}</td>
+            <td><a class="btn btn-dark btn-block" href="/admin/instructors/{{ id }}">View</a></td>
+          </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div class="card-footer small text-muted">Last updated <span id="date"></span></div>
+</div>
+{{#ifMore user.memberLvl 4}}
+<!-- Add new  -->
+<div class="card mb-3">
+  <div class="card-header">
+    <i class="fas fa-table"></i>
+    Add New Instructor
+  </div>
+  <div class="card-body">
+    <form name="instructors_form" action="/admin/instructors" method="POST">
+      <div class="form-group">
+        <label for="name">First Name</label>
+        <input type="text" class="form-control" id="instructor_first_name" aria-describedby="lastNameHelp" required>
+        <small id="nameHelp" class="form-text text-muted"></small>
+      </div>
+      <div class="form-group">
+        <label for="name">Last Name</label>
+        <input type="text" class="form-control" id="instructor_last_name" aria-describedby="lastNameHelp" required>
+        <small id="lastNameHelp" class="form-text text-muted"></small>
+      </div>
+      <div class="form-group">
+        <label for="description">Bio</label>
+        <textarea name="bio" class="form-control"  id="instructor_bio" aria-describedby="bioHelp" required></textarea>
+        <small id="bioHelp" class="form-text text-muted"></small>
+      </div>
+      <div class="form-group">
+        <label for="name">Photo</label>
+        <input type="text" name="instructor_photo" class="form-control" id="instructor_photo" aria-describedby="photoHelp" required>
+        <small id="photoHelp" class="form-text text-muted"></small>
+      </div>
+      <div class="form-group">
+        <label for="name">Email</label>
+        <input type="email" name="instructor_email" class="form-control" id="instructor_email" aria-describedby="emailHelp" required>
+        <small id="emailHelp" class="form-text text-muted"></small>
+      </div>
+      <div class="form-group">
+        <label for="name">Phone</label>
+        <input type="email" name="instructor_phone" class="form-control" id="instructor_phone" aria-describedby="phonelHelp" required>
+        <small id="phoneHelp" class="form-text text-muted"></small>
+      </div>
+      <button type="submit" id="create_instructor" class="btn btn-dark">Submit</button>
+    </form>
+  </div>
+</div>
+{{/ifMore}}

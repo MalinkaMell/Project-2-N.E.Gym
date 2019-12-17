@@ -1,0 +1,44 @@
+<video id="bgvid" playsinline autoplay muted loop>
+  <source src="https://static.videezy.com/system/resources/previews/000/007/006/original/MR8_8170.mp4"
+    type="video/webm">
+</video>
+
+{{> frontend.nav}}
+
+{{!-- about us --}}
+<section class="container-fluid d-flex py-5 justify-content-center align-items-center my-5">
+  <div class="container">
+    <h1 class="text-right raven">{{ title }}</h1>
+    <hr class="bg-white">
+    {{#each results}}
+    <div class="row my-5">
+      <div class="col-md-4">
+        <img src="{{photo}}" class="img-fluid img-thumbnail">
+      </div>
+      <div class="col-md-8">
+        <h3 class="text-left text-orange">{{firstName}} {{lastName}} </h3>
+        <hr class="bg-orange">
+        <p>{{bio}}</p>
+        <h5 class="text-orange">Upcoming sessions</h5>
+        <hr class="bg-orange">
+        <ul class="list-inline">
+          {{#each Sessions}}
+          <li><span class="date">{{date}}</span></li>
+          {{/each}}
+        </ul>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</section>
+{{!-- slogan --}}
+<section class="container-fluid d-flex p-2 justify-content-end align-items-center vh-100" id="call-for-action">
+  <div class="container  text-center">
+    <h2>Happier, healthier you</h2>
+    <h1 class="display-1 py-4">
+      <small>for only</small> $9.99 <small>per month</small>
+    </h1>
+    <button class="btn hvr-radial-in btn-lg">Join Today!</button>
+  </div>
+</section>
+{{> frontend.footer}}

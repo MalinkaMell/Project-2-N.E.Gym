@@ -1,0 +1,79 @@
+body {
+  font-family: ‘Franklin Gothic Medium’, ‘Arial Narrow’, Arial, sans-serif;
+ background-image: url("https://www.ampyourworkout.com/wp-content/uploads/2016/06/GYM_Dumbells.png");
+}
+header {
+  text-align: center;
+}
+#calendar {
+  width: 100%;
+}
+#calendar a {
+  color: pink;
+  text-decoration: none;
+}
+#calendar ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 100%;
+}
+#calendar li {
+  display: block;
+  float: left;
+  width: 14.34%;
+  padding: 5px;
+  box-sizing: border-box;
+  border: 1px soloid white;
+  margin-right: -1px;
+  margin-bottom: -1px;
+}
+#calendar ul.weekdays {
+  height: 40px;
+  background: pink;
+}
+#calendar ul.weekday li {
+  text-align: center;
+  text-transform: uppercase;
+  line-height: 20px;
+  border: none !important;
+  padding: 10px 6px;
+  color: whitesmoke;
+  font-size: 13px;
+}
+#calendar .days li {
+  height: 180px;
+}
+#calendar .date {
+  text-align: center;
+  margin-bottom: 5px;
+  padding: 4px;
+  background: url("https://www.ampyourworkout.com/wp-content/uploads/2016/06/GYM_Dumbells.png");
+  color: white;
+  width: 20px;
+  border-radius: 50%;
+  float: right;
+}
+#calendar .event {
+  clear: both;
+  display: block;
+  font-size: 13px;
+  border-radius: 4px;
+  padding: 5px;
+  margin-top: 40px;
+  margin-bottom: 5px;
+  line-height: 1px solid blue;
+  background: white;
+  border: 1px solid white;
+  color: blue;
+  text-decoration: none;
+}
+#calendar .event-desc {
+  color: purple;
+  margin: 3px 0 7px 0;
+  text-decoration: none;
+}
+#calendar .daysOtherMonth {
+  background: purple;
+  color: white;
+}

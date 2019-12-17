@@ -1,0 +1,42 @@
+<!-- User -->
+<div class="card mb-3">
+  <div class="card-header d-flex justify-content-between align-items-center">
+    <div>
+      <i class="fas fa-table"></i>
+      {{ title }}
+    </div>
+    <div id="save_btn_placeholder">
+      {{#ifMore user.memberLvl 5}}<button class="btn btn-dark" id="edit_user">Edit</button>{{/ifMore}}
+      {{#ifMore user.memberLvl 6}}<button class="btn btn-danger" id="delete_user">Delete</button>{{/ifMore}}
+    </div>
+  </div>
+  <div class="card-body">
+    <div class="table-responsive">
+      <table class="table table-bordered" width="100%" cellspacing="0">
+        <tr>
+          <td>ID:</td>
+          <td id="user_id">{{ results.id }}</td>
+        </tr>
+        <tr>
+          <td>First name</td>
+          <td id="user_f_name">{{ results.fName }}</td>
+        </tr>
+        <tr>
+          <td>Last name</td>
+          <td id="user_l_name">{{ results.lName }}</td>
+        </tr>
+        <tr>
+          <td>Email</td>
+          <td id="user_email">{{ results.email }}</td>
+        </tr>
+        {{#ifMore user.memberLvl 6}}
+        <tr>
+          <td>Member level</td>
+          <td id="user_lvl">{{ results.memberLvl }}</td>
+        </tr>
+        {{/ifMore}}
+      </table>
+    </div>
+  </div>
+  <div class="card-footer small text-muted">Last updated <span id="date"></span></div>
+</div>

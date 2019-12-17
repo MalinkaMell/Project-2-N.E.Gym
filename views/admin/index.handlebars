@@ -1,0 +1,24 @@
+<!-- Breadcrumbs-->
+<ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="#">{{ title }}</a>
+  </li>
+  <li class="breadcrumb-item active">Happened today:</li>
+
+</ol>
+<div class="card-deck my-3">
+  <div class="card bg-grayblue mb-3 d-flex justify-content-center align-items-center">
+    <div class="card-body d-flex justify-content-center align-items-center h5">New registrations: {{ count }}</div>
+  </div>
+  <div class="card bg-grayblue mb-3 d-flex justify-content-center align-items-center">
+    <div class="card-body d-flex justify-content-center align-items-center h5">Payments processed: {{ paycount }}</div>
+  </div>
+  <div class="card bg-grayblue mb-3 d-flex justify-content-center align-items-center">
+    <div class="card-body d-flex justify-content-center align-items-center h5">Money made: ${{ money }}</div>
+  </div>
+</div>
+<div class="card mb-3">
+  <div class="card-header">
+    <i class="fas fa-table"></i>
+    {{sess}} </div>
+</div>

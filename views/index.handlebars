@@ -1,33 +1,123 @@
-<div id="home">
-  <div class="container">
-    <div class="row">
-      <div class="col-8 offset-2">
-        <h1>{{msg}}</h1>
-        <h2>This is our Home Page!</h2>
-        <form class="clearfix mb-4" action="POST">
-          <div class="form-group">
-            <label for="example-text">Example Text</label>
-            <input type="text" id="example-text" class="form-control" aria-describedby="example-text" placeholder="Enter Example Text">
-          </div>
-          <div class="form-group">
-            <label for="example-description">Example Description</label>
-            <textarea class="form-control" id="example-description" aria-describedby="example-description" placeholder="Enter Example Description"></textarea>
-          </div>
-          <button id="submit" class="btn btn-primary float-right">Submit</button>
+<video id="bgvid" playsinline autoplay muted loop>
+  <source src="https://static.videezy.com/system/resources/previews/000/007/006/original/MR8_8170.mp4"
+    type="video/webm">
+</video>
+
+{{> frontend.nav}}
+
+<section class="container text-center vh-100">
+  <h1 class="py-3 title raven">{{ title1 }}</h1>
+  <div class="card-deck my-5">
+    <div class="card text-white bg-orange-80 mb-3 animated bounceInRight slow">
+      <div class="card-header h3 ">Become a member!</div>
+      <div class="card-body">
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
+        <h2 class="py-2">$9.99 per month</h2>
+          <button class="btn hvr-bounce-to-left" id="home_basic_submit" type="button">Join Now!</button>
+      </div>
+    </div>
+    <div class="card text-white bg-orange-light-80 mb-3 animated bounceInDown slow">
+      <div class="card-header h3">One Month Pass</div>
+      <div class="card-body">
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
+        <h2 class="py-2">$19.99 per month</h2>
+        <form action="/prepayment" method="POST">
+          <input type="hidden" name="type" value="One Month Pass">
+          <input type="hidden" name="amount" value="19.99">
+          <button class="btn hvr-bounce-to-top" type="submit">Join Now!</button>
         </form>
-        <h3>Examples:</h3>
-        <ul id="example-list" class="list-group">
-          {{#each examples}}
-          <li data-id="{{this.id}}" class="list-group-item">
-            <a href="example/{{this.id}}">{{this.text}}</a>
-            <button class="btn btn-danger float-right delete">ｘ</button>
-          </li>
-          {{/each}}
-        </ul>
+      </div>
+    </div>
+    <div class="card text-white bg-orange-dark-80 mb-3 animated bounceInLeft slow">
+      <div class="card-header h3">Buy One Day Pass!</div>
+      <div class="card-body">
+        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+          content.</p>
+        <h2 class="py-2">$1.99</h2>
+        <form action="/prepayment" method="POST">
+          <input type="hidden" name="type" value="One Day Pass">
+          <input type="hidden" name="amount" value="1.99">
+          <button class="btn hvr-bounce-to-left" type="submit">Join Now!</button>
+        </form>
       </div>
     </div>
   </div>
-</div>
+  <h2 class="py-3">Become The Person You Want To Be</h2>
+</section>
 
-<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
+{{!-- members --}}
+<section class="container-fluid d-flex p-2 justify-content-center align-items-center vh-100" id="about">
+  <div class="container">
+    <div class="row ">
+      <div class="col-md-6">
+        <h2 class="text-left animated fadeInRightBig ">N.E. Gym</h2>
+        <p class="animated fadeInRightBig slow">
+          Spicy jalapeno bacon ipsum dolor amet beef salami turducken shankle chicken sirloin corned beef leberkas
+          biltong pork loin fatback. Short ribs burgdoggen beef ribs tongue beef chicken landjaeger salami pastrami
+          sausage biltong filet mignon tri-tip porchetta. Tongue porchetta prosciutto, short ribs jowl picanha boudin
+          tail. Pastrami doner frankfurter drumstick meatball picanha ham bacon.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+{{!-- amenities --}}
+<section class="container-fluid d-flex p-2 justify-content-center align-items-center vh-100">
+  <div class="container">
+    <div class="card-deck my-5">
+      <div class="card text-white window-black mb-3 animated bounceInLeft slow" data-aos="fade-right">
+        <div class="card-header h3 text-orange text-center">Amenities</div>
+        <div class="card-body">
+          <ul class="list-unordered">
+            {{#each am}}
+            <li>{{name}}</li>
+            {{/each }}
+          </ul>
+
+        </div>
+        <div class="card-footer bg-orange"><a class="btn hvr-rectangle-out btn-block" href="/amenities">Check them out!</a>
+        </div>
+      </div>
+
+      <div class="card text-white window-black mb-3 animated bounceInUp slow">
+        <div class="card-body text-center d-flex flex-column p-2 justify-content-center align-items-center">
+          <h1 class="card-text">OPEN</h1>
+          <h1 class="display-1">24/7</h2>
+            <h4>at most locations</h4>
+        </div>
+        <div class="card-footer bg-orange"><a class="btn hvr-rectangle-out btn-block" href="/calendar">Get a free pass!</a>
+        </div>
+      </div>
+      <div class="card text-white  window-black mb-3 animated bounceInRight slow">
+        <div class="card-header h3 text-orange text-center">Classes</div>
+        <div class="card-body">
+          <ul class="list-unordered">
+            {{#each classes}}
+            <li>{{name}}</li>
+            {{/each }}
+          </ul>
+        </div>
+        <div class="card-footer bg-orange"><a class="btn hvr-rectangle-out btn-block" href="/calendar">View Calendar</a></div>
+      </div>
+    </div>
+
+  </div>
+  </div>
+
+</section>
+{{!-- slogan --}}
+<section class="container-fluid d-flex p-2 justify-content-end align-items-center vh-100" id="slogan">
+  <div class="container">
+    <h2 class="text-left animated fadeInDownBig slow">Our philosophy</h2>
+    <p class=" animated fadeInUpBig slow">
+      Spicy jalapeno bacon ipsum dolor amet beef salami turducken shankle chicken sirloin corned beef leberkas
+      biltong pork loin fatback. Short ribs burgdoggen beef ribs tongue beef chicken landjaeger salami pastrami
+      sausage biltong filet mignon tri-tip porchetta. Tongue porchetta prosciutto, short ribs jowl picanha boudin
+      tail. Pastrami doner frankfurter drumstick meatball picanha ham bacon.
+    </p>
+  </div>
+</section>
+
+{{> frontend.footer}}

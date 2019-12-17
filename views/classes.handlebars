@@ -1,0 +1,56 @@
+<video id="bgvid" playsinline autoplay muted loop>
+  <source src="https://static.videezy.com/system/resources/previews/000/007/006/original/MR8_8170.mp4"
+    type="video/webm">
+</video>
+
+{{> frontend.nav}}
+{{!-- {
+"id": 1,
+"name": "Kickboxing",
+"description": "Leave your troubles at the door and let the music, your classmates and our instructors sweep you into your power hour. Our cardio classes work your whole body! So dial up the intensity, push your limits, burn some calories and get your heart in the right place.",
+"duration": 60,
+"intensity": "All levels",
+"price": "9.99",
+"createdAt": "2019-12-03T06:17:04.000Z",
+"updatedAt": "2019-12-03T06:32:19.000Z",
+"CategoryId": 2,
+"InstructorId": null,
+"Category": {
+"id": 2,
+"name": "Cardio",
+"description": "Leave your troubles at the door and let the music, your classmates and our instructors sweep you into your power hour. Our cardio classes work your whole body! So dial up the intensity, push your limits, burn some calories and get your heart in the right place.",
+"photo": "https://www.hearthstonehealthandfitness.com/images/front_page/classes/cardio_dance.jpg",
+"createdAt": "2019-12-03T05:40:32.000Z",
+"updatedAt": "2019-12-03T05:40:32.000Z"
+}
+} --}}
+{{!-- about us --}}
+<section class="container-fluid d-flex py-5 justify-content-center align-items-center my-5">
+  <div class="container">
+    <h1 class="text-right raven">{{ title }}</h1>
+    <hr class="bg-white">
+    {{#each results}}
+    <div class="row my-5">
+      <div class="col-md-4">
+        <img src="{{Category.photo}}" class="img-fluid img-thumbnail">
+      </div>
+      <div class="col-md-8">
+        <h3 class="text-left text-orange">{{name}} | <small class="text-white">{{Category.name}}</small></h3>
+        <hr class="bg-orange">
+        <p>{{description}}</p>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+</section>
+{{!-- slogan --}}
+<section class="container-fluid d-flex p-2 justify-content-end align-items-center vh-100" id="call-for-action">
+  <div class="container  text-center">
+    <h2>Happier, healthier you</h2>
+    <h1 class="display-1 py-4">
+      <small>for only</small> $9.99 <small>per month</small>
+    </h1>
+    <button class="btn hvr-radial-in btn-lg">Join Today!</button>
+  </div>
+</section>
+{{> frontend.footer}}
