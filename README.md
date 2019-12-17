@@ -1,5 +1,3 @@
-[![Build Status](https://travis-ci.com/sdanyalk/auth-project-two.svg?branch=master)](https://travis-ci.com/sdanyalk/auth-project-two)
-
 # Project 2: N.E.Gym
 
 ![N.E.Gym](public/images/git-header.jpg)
