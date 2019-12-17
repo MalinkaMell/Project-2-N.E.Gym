@@ -2,7 +2,7 @@
 
 # Project 2: N.E.Gym
 
-![N.E.Gym](public/assets/img/git-header.jpg)
+![N.E.Gym](public/images/git-header.jpg)
 
 This application is simple a Content Management System (CMS) that performs CRUD operations with given tools. 
 Chosen Gym as a theme, this flexible application can apply to any business.
