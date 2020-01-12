@@ -1,6 +1,19 @@
 # Project 2: N.E.Gym
 
-![N.E.Gym](public/images/git-header.jpg)
+![N.E.Gym](public/images/githubtpl.png)
+
+
+### Group Project 2 of 3 for University of Arizona Cooding Bootcamp
+
+**Team Death Eaters aka JIRC**
+
+Members:
+* Joshua Einsel - team leader
+* Irina Kudosova - front/back end
+* Chrisitna Sosa - front end
+* Raymond Terry - back end
+
+---
 
 This application is simple a Content Management System (CMS) that performs CRUD operations with given tools. 
 Chosen Gym as a theme, this flexible application can apply to any business.
@@ -16,6 +29,7 @@ It has 2 different levels of Users:
 It has 2 different levels of front-end views: 
 *   User view 
 *   Administrator view
+
 ---
 
 ### Tecnologies/NPM Packages:
@@ -46,3 +60,6 @@ This project is deployed on Heroku. The link to web app is:
 
 ---
 
+**Optimized for 1920x1080 screen resolution and Google Chrome Version 78**
+
+_Made for University of Arizona Coding Bootcamp, Week-16, November 2019_
